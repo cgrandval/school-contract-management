@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'editContract'|trans }}{% endblock %}
+
+{% block body %}
+    <h1>{{ 'editContract'|trans }}</h1>
+
+    {{ include('contract/_form.html.twig') }}
+
+    <a href="{{ path('course_index') }}">back to list</a>
+
+    {{ include('contract/_delete_form.html.twig') }}
+{% endblock %}

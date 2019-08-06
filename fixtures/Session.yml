@@ -1,0 +1,5 @@
+App\Entity\Session:
+    d204:
+        name: D20.4
+    d210:
+        name: D21.0

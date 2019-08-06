@@ -1,0 +1,31 @@
+<tr>
+    <td>
+        {{ form_widget(form.courseLabel) }}
+        {{ form_errors(form.courseLabel) }}
+    </td>
+    <td>
+        {{ form_widget(form.session) }}
+        {{ form_errors(form.session) }}
+    </td>
+    <td>
+        {{ form_widget(form.intervener) }}
+        {{ form_errors(form.intervener) }}
+    </td>
+    <td>
+        {{ form_widget(form.hours) }}
+        {{ form_errors(form.hours) }}
+    </td>
+    <td>
+        {{ form_widget(form.dateStart) }}
+        {{ form_errors(form.dateStart) }}
+    </td>
+    <td>
+        {{ form_widget(form.dateEnd) }}
+        {{ form_errors(form.dateEnd) }}
+    </td>
+    <td>
+        <button type="button" class="btn btn-outline-danger remove-course">
+            <i class="fas fa-times"></i>
+        </button>
+    </td>
+</tr>

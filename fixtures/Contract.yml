@@ -1,0 +1,21 @@
+App\Entity\Contract:
+    contract0:
+        number: 06082019CG1
+        society: '@darkmira'
+        hourlyRate: 75
+        signed: true
+        onServer: false
+        inIntranet: false
+    contract1:
+        number: 06082019CG2
+        society: '@darkmira'
+        hourlyRate: 69.50
+        signed: false
+        onServer: true
+        inIntranet: true
+    contract2:
+        number: 05082019CG2
+        society: '@darkmira'
+        signed: false
+        onServer: false
+        inIntranet: false

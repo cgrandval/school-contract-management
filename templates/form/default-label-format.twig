@@ -1,0 +1,17 @@
+{% extends 'bootstrap_4_layout.html.twig' %}
+
+{% block form_label -%}
+    {%- if label_format is empty -%}
+        {% set label_format = '%name%' %}
+    {% endif %}
+
+    {{ parent() }}
+{%- endblock form_label %}
+
+{% block checkbox_radio_label -%}
+    {%- if label_format is empty -%}
+        {% set label_format = '%name%' %}
+    {% endif %}
+
+    {{ parent() }}
+{%- endblock checkbox_radio_label %}

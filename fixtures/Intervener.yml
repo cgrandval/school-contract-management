@@ -1,0 +1,5 @@
+App\Entity\Intervener:
+    christophe:
+        name: Christophe Villeger
+    laurent:
+        name: Laurent Bassin
