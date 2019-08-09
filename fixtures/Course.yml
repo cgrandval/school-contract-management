@@ -1,0 +1,32 @@
+App\Entity\Course:
+    course0:
+        hours: 4
+        dateStart: <(new \DateTime('2019-08-01'))>
+        dateEnd: <(new \DateTime('2019-08-05'))>
+        intervener: '@christophe'
+        courseLabel: '@symfony'
+        session: '@d204'
+        contract: '@contract0'
+    course1:
+        hours: 2
+        dateStart: <(new \DateTime('2019-07-01'))>
+        dateEnd: <(new \DateTime('2019-07-05'))>
+        intervener: '@laurent'
+        courseLabel: '@php7basics'
+        session: '@d204'
+        contract: '@contract1'
+    course2:
+        hours: 3.5
+        dateStart: <(new \DateTime('2019-07-06'))>
+        dateEnd: <(new \DateTime('2019-07-07'))>
+        intervener: '@christophe'
+        courseLabel: '@php7basics'
+        session: '@d210'
+        contract: '@contract1'
+    course3:
+        hours: 1.75
+        dateStart: <(new \DateTime('2019-07-10'))>
+        dateEnd: <(new \DateTime('2019-07-14'))>
+        intervener: '@laurent'
+        courseLabel: '@symfony'
+        session: '@d210'

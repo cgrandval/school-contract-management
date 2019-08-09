@@ -1,0 +1,7 @@
+App\Entity\CourseLabel:
+    symfony:
+        name: Symfony
+    php7basics:
+        name: PHP7 basics
+    advancedPoo:
+        name: Advanced Poo

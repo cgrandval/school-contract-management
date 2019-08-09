@@ -1,0 +1,10 @@
+import 'jquery';
+import '@fortawesome/fontawesome-free/css/all.css'
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap-table';
+import 'bootstrap-table/dist/bootstrap-table.css';
+import 'bootstrap-table/dist/locale/bootstrap-table-fr-FR';
+import '../css/app.css';
+import './select2';
+import './contract-form';

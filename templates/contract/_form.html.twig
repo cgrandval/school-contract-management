@@ -1,0 +1,46 @@
+{{ form_start(form) }}
+
+    <div class="row">
+        <div class="offset-md-2 col-md-8 offset-lg-3 col-lg-6">
+            <div class="row">
+                <div class="col-md-6">
+                    {{ form_row(form.number) }}
+                    {{ form_row(form.society) }}
+                    {{ form_row(form.hourlyRate) }}
+                </div>
+                <div class="col-md-6">
+                    {{ form_row(form.signed) }}
+                    {{ form_row(form.onServer) }}
+                    {{ form_row(form.inIntranet) }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h3>{{ 'courses'|trans }}</h3>
+
+    <div
+        id="course-prototype"
+        data-prototype="{{ include('course/_form-widget-table-row.twig', {'form': form.courses.vars.prototype})|e('html_attr') }}"
+    ></div>
+
+    <table class="table table-sm table-borderless">
+        {% include 'course/_form-widget-table-head.twig' %}
+        <tbody class="contract-courses">
+            {% for formCourse in form.courses %}
+                {% include 'course/_form-widget-table-row.twig' with {'form': formCourse} only %}
+            {% endfor %}
+
+            <tr class="text-center new-course">
+                <td colspan="7">
+                    <button type="button" class="btn btn-primary add-new-course">
+                        <i class="fas fa-plus"></i>
+                        {{ 'addCourse'|trans }}
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button class="btn btn-success">{{ 'saveForm'|trans }}</button>
+{{ form_end(form) }}

@@ -1,0 +1,79 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'courses'|trans }}{% endblock %}
+
+{% block body %}
+    <h1>{{ 'courses'|trans }}</h1>
+
+    <table
+        class="table table-sm"
+        data-toggle="table"
+        data-search="true"
+    >
+        <thead>
+            <tr>
+                <th data-sortable="true">{{ 'session'|trans }}</th>
+                <th data-sortable="true">{{ 'dateStart'|trans }}</th>
+                <th data-sortable="true">{{ 'dateEnd'|trans }}</th>
+                <th data-sortable="true">{{ 'hours'|trans }}</th>
+                <th data-sortable="true">{{ 'hourlyRate'|trans }}</th>
+                <th data-sortable="true">{{ 'contract'|trans }}</th>
+                <th data-sortable="true">{{ 'society'|trans }}</th>
+                <th data-sortable="true">{{ 'intervener'|trans }}</th>
+                <th data-sortable="true">{{ 'course'|trans }}</th>
+                <th>{{ 'flags'|trans }}</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for course in courses %}
+            <tr>
+                <td>{{ course.session.name|default('-') }}</td>
+                <td>{{ course.dateStart ? course.dateStart|date('Y-m-d') : '' }}</td>
+                <td>{{ course.dateEnd ? course.dateEnd|date('Y-m-d') : '' }}</td>
+                <td>{{ course.hours }}</td>
+                <td>{{ course.contract and course.contract.hourlyRate ? course.contract.hourlyRate|localizedcurrency('EUR') : '-' }}</td>
+                <td>
+                    {% if course.contract %}
+                        <a href="{{ path('contract_edit', {id: course.contract.id}) }}">{{ course.contract.number }}</a>
+                    {% else %}
+                        <span title="No contract">-</span>
+                    {% endif %}
+                </td>
+                <td>{{ course.contract.society|default('-') }}</td>
+                <td>{{ course.intervener.name|default('-') }}</td>
+                <td>{{ course.courseLabel.name|default('-') }}</td>
+                <td>
+                    {% if course.contract %}
+                        <span class="lead {{ course.contract.signed ? 'text-success' : 'text-danger' }}">
+                            <i class="fas fa-certificate" title="{{ course.contract.signed ? 'Ok' : 'Not' }} signed"></i>
+                        </span>
+                        <span class="lead {{ course.contract.onServer ? 'text-success' : 'text-danger' }}">
+                            <i class="fas fa-cloud-upload-alt" title="{{ course.contract.onServer ? 'Ok' : 'Not' }} server"></i>
+                        </span>
+                        <span class="lead {{ course.contract.inIntranet ? 'text-success' : 'text-danger' }}">
+                            <i class="fas fa-calendar-day" title="{{ course.contract.inIntranet ? 'Ok' : 'Not' }} planning"></i>
+                        </span>
+                    {% endif %}
+                </td>
+                <td>
+                    <a class="btn btn-link btn-sm" href="{{ path('course_edit', {'id': course.id}) }}">edit course</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="11">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a class="btn btn-primary mt-3" href="{{ path('contract_new') }}">
+        <i class="fas fa-plus"></i>
+        {{ 'addContract'|trans }}
+    </a>
+    <a class="btn btn-primary mt-3" href="{{ path('course_new') }}">
+        <i class="fas fa-plus"></i>
+        {{ 'addCourse'|trans }}
+    </a>
+{% endblock %}

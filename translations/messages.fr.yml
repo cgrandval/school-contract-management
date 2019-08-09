@@ -1,0 +1,22 @@
+addContract: Ajouter un contract
+editContract: Modifier le contrat
+addCourse: Ajouter un cours
+editCourse: Modifier le cours
+saveForm: Enregistrer
+contract: Contrat
+newContract: Nouveau contrat
+number: Numéro
+hourlyRate: Taux/h
+society: Société
+intervener: Intervenant
+signed: Signé
+onServer: Sur le serveur
+inIntranet: Planifié dans l'intranet
+course: Cours
+courseLabel: Nom du cours
+session: Session
+dateStart: Date début
+dateEnd: Date fin
+hours: Heures
+courses: Cours
+flags: Flags
